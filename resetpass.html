@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reset Password</title>
+    
+</head>
+<script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-database.js"></script>
+  
+<body>
+    <div>
+        <form>
+            <p>Enter your Email</p>
+            <input  id="inp_reset_pass" type="email" placeholder="Enter your email">
+            <input  type="button" value="enter" onclick="resetpass()">
+        </form>
+    </div>
+    
+</body>
+<script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-database.js"></script>
+<script> 
+console.log(localStorage.getItem("user",));
+const firebaseConfig = {
+  apiKey: "AIzaSyAbmsWaB_xpj5l4EEFStBiS8ovegxzAWIE",
+  authDomain: "signin-fbe32.firebaseapp.com",
+  projectId: "signin-fbe32",
+  storageBucket: "signin-fbe32.appspot.com",
+  messagingSenderId: "622379387575",
+  appId: "1:622379387575:web:e73458b7242f5c551b1b32",
+  measurementId: "G-CBW63P4EXP"
+};
+// document.getElementsByClassName('login').style.visibility = "visible"
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+
+
+function resetpass(){
+    console.log('true')
+   firebase.auth().sendPasswordResetEmail(document.getElementById("inp_reset_pass").value).then(()=>{
+     console.log("reset pasword email .sent")
+   })
+   .catch((error) => {
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    // ..
+  });
+
+ }
+</script>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>signup_login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="inner-box" id="card">
+                <div class="card-front">
+                    <h2>Login</h2>
+                    <form>
+                        <input id="inp_lgn_email" type="email" class="input-box" placeholder="Your Email" required>
+                        <input id="inp_lgn_password" type="password" class="input-box" placeholder="Password" required>
+                        <input type="button" class="input-box" value="Login" onclick="login()">
+                        <input id="myCheck" type="checkbox"><span>Remember me</span>
+                    </form>
+                    <button type="button" class="btn" onclick="openSignup()">I am new Here</button>
+                    <a href="resetpass.html" target="_self" >Forgot Password</a>
+                </div>
+                <div class="card-back">
+                    <h2>Sign-up</h2>
+                    <form>
+                        <input id="inp_sgn_user" type="text" class="input-box" placeholder="Your Name" required>
+                        <input id="inp_sgn_email" type="email" class="input-box" placeholder="Your Email" required>
+                        <input id="inp_sgn_password" type="password" class="input-box" placeholder="Password" required><br><br>
+                        <input type="button" onclick="register()" class="input-box" value="Submit">
+                        
+                    </form>
+                    <button type="button" class="btn" onclick="openLogin()" >Already have an Account</button>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-database.js"></script>
+<script src="script.js"></script>
+
+</html>

@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>facebook clone</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="stylefb.css">
+</head>
+
+<body>
+    <!-- Header starts here-->
+    <div class="header">
+        <div class="header_left">
+            <img src="images/fb-logo.png" alt="fb-logo">
+            <div class="header_input">
+                <span class="material-icons"> search</span>
+                <input type="text" placeholder="Search Facebook">
+            </div>
+
+        </div>
+        <div class="header_middle">
+            <div class="header_option active">
+                <span class="material-icons"> home </span>
+            </div>
+            <div class="header_option">
+                <span class="material-icons"> flag</span>
+            </div>
+            <div class="header_option">
+                <span class="material-icons"> subscriptions </span>
+            </div>
+            <div class="header_option">
+                <span class="material-icons">storefront </span>
+            </div>
+            <div class="header_option">
+                <span class="material-icons">supervised_user_circle </span>
+            </div>
+
+        </div>
+        <div class="header_right">
+            <div class="header_info">
+                <img class="user_avatar" src="images/avatar.png" alt="avatar 1">
+                <h4>Sameer Ahmed</h4>
+            </div>
+            <span class="material-icons"> add </span>
+            <span class="material-icons">forum </span>
+            <span class="material-icons">notifications_active</span>
+            <span id="dropmenu" class="material-icons"> expand_more
+                <div calss="dropdown">
+                    <ul>
+
+                        <ul class="dropdown">
+                            <li>about us</li>
+                            <li>profile</li>
+                            <li> <a href="#" onclick="signout()">signout</a></li>
+                        </ul>
+                    </ul>
+                </div>
+            </span>
+        </div>
+    </div>
+    <!-- Header Ends here-->
+
+
+    <!-- Main Body Starts-->
+    <div class="main_body">
+        <!-- sidebar Starts-->
+        <div class="sidebar">
+            <div class="sidebarRow">
+                <img class="user_avatar" src="images/avatar.png" alt="avatar 1">
+                <h4>Sameer Ahmed</h4>
+            </div>
+            <div class="sidebarRow">
+                <span class="material-icons">local_hospital</span>
+                <h4>Covid 19 Information Center</h4>
+            </div>
+            <div class="sidebarRow">
+                <span class="material-icons"> outlined_flag </span>
+                <h4>Pages</h4>
+            </div>
+            <div class="sidebarRow">
+                <span class="material-icons">people</span>
+                <h4>People</h4>
+            </div>
+            <div class="sidebarRow">
+                <span class="material-icons">chat </span>
+                <h4>Messenger</h4>
+            </div>
+            <div class="sidebarRow">
+                <span class="material-icons"> storefront </span>
+                <h4>Marketplace</h4>
+            </div>
+            <div class="sidebarRow">
+                <span class="material-icons"> video_library </span>
+                <h4>Videos</h4>
+            </div>
+            <div class="sidebarRow">
+                <span class="material-icons"> expand_more </span>
+                <h4>More</h4>
+            </div>
+
+        </div>
+        <!-- sidebar Ends-->
+
+        <!--Feed starts-->
+        <div class="feed">
+            <div class="storyReel scrollmenu" id="stories" style="width: 100%;">
+                <!--story starts-->
+                <!-- <div class="story">
+                    <img class="storyImage" src="images/418876.jpg">
+                    <img class="story_avatar" src="images/avatar.png" alt="">
+                    <h4>Sameer</h4>
+                </div> -->
+                <!-- story ends-->
+
+                <!--story starts--3
+                <div style="background-image: url(images/post1.jpg);" class="story">
+                    <img class="user_avatar story_avtar" src="images/avatar2.png" alt="">
+                    <h4>Ahmed</h4>
+                </div> -->
+                <!-- story ends-->
+            </div>
+            <!--Message sender-->
+            <div class="messagesender">
+                <div class="messagesender_top">
+                    <img class="user_avatar" src="images/avatar.png" alt="">
+                    <form>
+                        <input id="inp_post_text" class="messagesender_input" type="text"
+                            placeholder="What's on Your mind ?">
+                    </form>
+                </div>
+
+                <div class="messagesender_bottom">
+                    <div class="messagesender_options">
+                        <span style="color: red;" class="material-icons">videocam </span>
+                        <h3>Live</h3>
+                    </div>
+                    <div class="messagesender_options" id="div_choose_file">
+                        <span style="color: green;" class="material-icons">photo_library</span>
+                        <input type="file" id="inp_choose_file" value="Photo" class="file-select" accept="image/*" />
+                        <!-- <h3>Photo</h3> -->
+                    </div>
+                    <div class="messagesender_options">
+                        <span style="color: orange;" class="material-icons">insert_emoticon</span>
+                        <h3>Feeling</h3>
+                    </div>
+                    <input type="button" value="post" onclick="uploadPost()">
+                  
+
+                </div>
+            </div>
+            <!--Message sender Ends-->
+            <!--Post starts-->
+            <div id="div_all_posts">
+                <div id="filesubmit">
+                    <!-- <input type="file" class="file-select" accept="image/*" />
+                    <button class="file-submit" onclick="uploadPost()">SUBMIT</button> -->
+                </div>
+                <!--  <div class="post">
+                    <div class="post_top">
+                        <img class="user_avatar post_avatar" src="images/avatar.png" alt="">
+                        <div class="post_topinfo">
+                            <h3>Sameer Ahmed</h3>
+                            <p>26th september 9:53</p>
+                        </div>
+
+                    </div>
+
+                    <div class="post_bottom">
+                        <p>Message</p>
+                    </div>
+                    <div class="post_img">
+                        <img src="images/post1.jpg" alt="">
+                    </div>
+                    <div class="post_options">
+                        <div class="post_option">
+                            <span class="material-icons">thumb_up</span>
+                            <p>Likes</p>
+                        </div>
+                        <div class="post_option">
+                            <span class="material-icons">chat_bubble_outline</span>
+                            <p>Comment</p>
+                        </div>
+                        <div class="post_option">
+                            <span class="material-icons">near_me</span>
+                            <p>Share</p>
+                        </div>
+                    </div>
+                </div>
+-->
+                <!--Post Ends-->
+                <!--Post starts-->
+                <!--  <div class="post">
+                    <div class="post_top">
+                        <img class="user_avatar post_avatar" src="images/avatar.png" alt="">
+                        <div class="post_topinfo">
+                            <h3>Sameer Ahmed</h3>
+                            <p>26th september 9:53</p>
+                        </div>
+                    </div>
+                    <div class="post_bottom">
+                        <p>just some random image-less post i made</p>
+                    </div>
+                    <div class="post_options">
+                        <div class="post_option">
+                            <span class="material-icons">thumb_up</span>
+                            <p>Likes</p>
+                        </div>
+                        <div class="post_option">
+                            <span class="material-icons">chat_bubble_outline</span>
+                            <p>Comment</p>
+                        </div>
+                        <div class="post_option">
+                            <span class="material-icons">near_me</span>
+                            <p>Share</p>
+                        </div>
+                    </div>
+                </div>
+                -->
+                <!--Post Ends-->
+                <!--Post starts-->
+
+                <!-- <div class="post">
+                    <div class="post_top">
+                        <img class="user_avatar post_avatar" src="images/avatar.png" alt="">
+                        <div class="post_topinfo">
+                            <h3>Sameer Ahmed</h3>
+                            <p>26th september 9:53</p>
+                        </div>
+
+                    </div>
+
+                    <div class="post_bottom">
+                        <p>Message</p>
+                    </div>
+                    <div class="post_img">
+                        <img src="images/1039858.jpg" alt="">
+                    </div>
+
+                    <div class="post_options">
+                        <div class="post_option">
+                            <span class="material-icons">thumb_up</span>
+                            <p>Likes</p>
+                        </div>
+                        <div class="post_option">
+                            <span class="material-icons">chat_bubble_outline</span>
+                            <p>Comment</p>
+                        </div>
+                        <div class="post_option">
+                            <span class="material-icons">near_me</span>
+                            <p>Share</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            -->
+                <!--Post Ends-->
+
+
+            </div>
+            <!-- Feed ends-->
+            <div class="fb-page" data-href="https://www.facebook.com/facebook" data-tabs="timeline" data-width="300"
+                data-height="700" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false"
+                data-show-facepile="true">
+                <blockquote cite="https://www.facebook.com/facebook" class="fb-xfbml-parse-ignore"><a
+                        href="https://www.facebook.com/facebook">‏‎Facebook‎‏</a></blockquote>
+            </div>
+
+            <!-- Main Body ENds-->
+            <div id="fb-root"></div>
+            <script async defer crossorigin="anonymous"
+                src="https://connect.facebook.net/ur_PK/sdk.js#xfbml=1&version=v12.0" nonce="xJR54cWj"></script>
+            <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-app.js"></script>
+            <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-auth.js"></script>
+            <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-database.js"></script>
+            <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-storage.js"></script>
+
+
+            <script src="script.js">
+            </script>
+</body>
+
+</html>
